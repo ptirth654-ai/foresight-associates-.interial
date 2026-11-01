@@ -1,0 +1,284 @@
+/**
+ * FORESIGHT ASSOCIATES — Luxury Architecture & Interior Design Studio
+ * Responsive Media Queries
+ * Breakpoints: 1200px, 992px, 768px, 576px
+ */
+
+/* ---------------------------------------------
+   Large Screens & Desktops (< 1280px)
+---------------------------------------------- */
+@media screen and (max-width: 1280px) {
+  :root {
+    --container-gutter: 2.5rem;
+  }
+  
+  .footer-top {
+    grid-template-columns: 4fr 2fr 2fr 3fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ---------------------------------------------
+   Laptops & Medium Desktops (< 1080px)
+---------------------------------------------- */
+@media screen and (max-width: 1080px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* ---------------------------------------------
+   Tablets & Small Desktops (< 992px)
+---------------------------------------------- */
+@media screen and (max-width: 992px) {
+  :root {
+    --container-gutter: 2rem;
+  }
+
+  /* Nav Switches to Mobile Drawer */
+  .desktop-nav,
+  .btn-nav-desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Split Layout Stacks */
+  .split-layout,
+  .split-layout.reversed {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    direction: ltr;
+  }
+
+  .split-media {
+    order: -1;
+  }
+
+  .split-media-frame {
+    aspect-ratio: 16 / 11;
+  }
+
+  /* Projects Grid Adjustments */
+  .project-card,
+  .project-card.featured-narrow-left,
+  .project-card.featured-narrow-right {
+    grid-column: span 12;
+  }
+
+  .project-media-wrapper,
+  .project-card.featured-narrow-left .project-media-wrapper,
+  .project-card.featured-narrow-right .project-media-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Team Grid Stacks on Medium Tablets */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Services Feature Rows Stack */
+  .service-feature-row,
+  .service-feature-row:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    direction: ltr;
+  }
+
+  .service-feature-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Contact Page Stacks */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  /* Footer Stacks */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  /* Instagram & Moments Grid */
+  .instagram-grid,
+  .spatial-moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------------------------------
+   Landscape Phones & Small Tablets (< 768px)
+---------------------------------------------- */
+@media screen and (max-width: 768px) {
+  :root {
+    --container-gutter: 1.5rem;
+  }
+
+  .site-header {
+    padding: 1.25rem 0;
+  }
+
+  .brand-logo-img {
+    height: 36px;
+  }
+
+  .hero-fullscreen {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-headline {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-full {
+    grid-column: span 1;
+  }
+
+  .filter-nav {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+  }
+
+  .modal-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .modal-close-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .modal-content-panel {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ---------------------------------------------
+   Mobile Portrait (< 576px)
+---------------------------------------------- */
+@media screen and (max-width: 576px) {
+  :root {
+    --container-gutter: 1.25rem;
+  }
+
+  .heading-display {
+    font-size: 2.75rem;
+  }
+
+  .heading-section {
+    font-size: 2.1rem;
+  }
+
+  .hero-studio-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  .instagram-grid,
+  .spatial-moments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .project-media-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(17,17,17,0) 50%, rgba(17,17,17,0.75) 100%);
+    padding: 1rem;
+  }
+}
+

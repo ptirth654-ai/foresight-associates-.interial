@@ -1,0 +1,180 @@
+/**
+ * FORESIGHT ASSOCIATES — Luxury Architecture & Interior Design Studio
+ * Animations & Keyframe Transitions
+ */
+
+/* ---------------------------------------------
+   Scroll Reveal Base States
+---------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade {
+  opacity: 0;
+}
+.reveal-fade.is-revealed {
+  opacity: 1;
+}
+
+.reveal-slide-up {
+  opacity: 0;
+  transform: translateY(32px);
+}
+.reveal-slide-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-slide-down {
+  opacity: 0;
+  transform: translateY(-32px);
+}
+.reveal-slide-down.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+.reveal-slide-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(32px);
+}
+.reveal-slide-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; }
+
+/* ---------------------------------------------
+   Keyframe Animations
+---------------------------------------------- */
+@keyframes scrollLinePulse {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  40% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  60% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Subtle line expand animation */
+.line-expand {
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-soft-beige);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.line-expand.is-revealed {
+  width: 100%;
+}
+
+/* Smooth filter transition for project cards */
+.project-card {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.is-hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  display: none;
+}
+
+/* ---------------------------------------------
+   Accessibility: Reduced Motion
+---------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-fade,
+  .reveal-slide-up,
+  .reveal-slide-down,
+  .reveal-slide-left,
+  .reveal-slide-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-bg-img {
+    transform: none !important;
+  }
+
+  .hero-scroll-line {
+    animation: none !important;
+    height: 38px;
+    opacity: 0.7;
+  }
+}
+
